@@ -6,7 +6,7 @@ ENV container docker
 LABEL RUN="docker run -it --name NAME --privileged --ipc=host --net=host --pid=host -e HOST=/host -e NAME=NAME -e IMAGE=IMAGE -v /run:/run -v /var/log:/var/log -v /etc/localtime:/etc/localtime -v /:/host IMAGE"
 
 # Install needed packages for the dracut CI container
-RUN dnf -y install \
+RUN dnf -y install --setopt=install_weak_deps=False \
     dash \
     asciidoc \
     mdadm \
