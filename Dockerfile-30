@@ -1,6 +1,6 @@
 FROM docker.io/fedora:30
 
-MAINTAINER https://github.com/dracutdevs/fedora-30-container
+MAINTAINER https://github.com/dracutdevs/fedora-container
 
 ENV container docker
 LABEL RUN="docker run -it --name NAME --privileged --ipc=host --net=host --pid=host -e HOST=/host -e NAME=NAME -e IMAGE=IMAGE -v /run:/run -v /var/log:/var/log -v /etc/localtime:/etc/localtime -v /:/host IMAGE"
@@ -25,6 +25,7 @@ RUN dnf -y install \
     btrfs-progs \
     kmod-devel \
     gcc \
+    make \
     bzip2 \
     xz \
     tar \
