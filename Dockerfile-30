@@ -7,7 +7,6 @@ LABEL RUN="docker run -it --name NAME --privileged --ipc=host --net=host --pid=h
 
 # Install needed packages for the dracut CI container
 RUN dnf -y install \
-    git \
     dash \
     asciidoc \
     mdadm \
@@ -20,17 +19,26 @@ RUN dnf -y install \
     scsi-target-utils \
     iscsi-initiator-utils \
     strace \
-    syslinux \
-    genisoimage \
     btrfs-progs \
     kmod-devel \
     gcc \
-    make \
     bzip2 \
     xz \
     tar \
     wget \
     rpm-build \
+    make \
+    git \
+    bash-completion \
+    sudo \
+    kernel \
+    dhcp-client \
+    /usr/bin/qemu-kvm \
+    /usr/bin/qemu-system-$(uname -i) \
+    e2fsprogs \
+    tcpdump \
+    iproute \
+    iputils \
     && dnf clean all
 
 # Set default command
