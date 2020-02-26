@@ -39,6 +39,8 @@ RUN dnf -y install --setopt=install_weak_deps=False \
     tcpdump \
     iproute \
     iputils \
+    dbus-daemon \
+    kbd \
     && dnf clean all
 
 # Set default command
