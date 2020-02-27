@@ -1,0 +1,48 @@
+FROM docker.io/fedora:latest
+
+MAINTAINER https://github.com/dracutdevs/fedora-container
+
+ENV container docker
+LABEL RUN="docker run -it --name NAME --privileged --ipc=host --net=host --pid=host -e NAME=NAME -e IMAGE=IMAGE IMAGE"
+
+# Install needed packages for the dracut CI container
+RUN dnf -y install --setopt=install_weak_deps=False \
+    dash \
+    asciidoc \
+    mdadm \
+    lvm2 \
+    dmraid \
+    cryptsetup \
+    nfs-utils \
+    nbd \
+    dhcp-server \
+    scsi-target-utils \
+    iscsi-initiator-utils \
+    strace \
+    btrfs-progs \
+    kmod-devel \
+    gcc \
+    bzip2 \
+    xz \
+    tar \
+    wget \
+    rpm-build \
+    make \
+    git \
+    bash-completion \
+    sudo \
+    kernel \
+    dhcp-client \
+    /usr/bin/qemu-kvm \
+    /usr/bin/qemu-system-$(uname -i) \
+    e2fsprogs \
+    tcpdump \
+    iproute \
+    iputils \
+    dbus-daemon \
+    kbd \
+    NetworkManager \
+    && dnf clean all
+
+# Set default command
+CMD ["/usr/bin/bash"]
