@@ -3,7 +3,7 @@ FROM docker.io/fedora:30
 MAINTAINER https://github.com/dracutdevs/fedora-container
 
 ENV container docker
-LABEL RUN="docker run -it --name NAME --privileged --ipc=host --net=host --pid=host -e HOST=/host -e NAME=NAME -e IMAGE=IMAGE -v /run:/run -v /var/log:/var/log -v /etc/localtime:/etc/localtime -v /:/host IMAGE"
+LABEL RUN="docker run -it --name NAME --privileged --ipc=host --net=host --pid=host -e NAME=NAME -e IMAGE=IMAGE IMAGE"
 
 # Install needed packages for the dracut CI container
 RUN dnf -y install --setopt=install_weak_deps=False \
@@ -41,6 +41,7 @@ RUN dnf -y install --setopt=install_weak_deps=False \
     iputils \
     dbus-daemon \
     kbd \
+    NetworkManager \
     && dnf clean all
 
 # Set default command
