@@ -1,5 +1,5 @@
 # fedora-container
-Fedora CI Test Container for the dracut testsuite
+Fedora CI Test Containers for the dracut testsuite
 
 * ![Fedora 31](https://github.com/dracutdevs/fedora-container/workflows/Fedora%2031/badge.svg)
 * ![Fedora 32](https://github.com/dracutdevs/fedora-container/workflows/Fedora%2032/badge.svg)
