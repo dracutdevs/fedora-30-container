@@ -1,4 +1,4 @@
-FROM docker.io/fedora:32
+FROM docker.io/fedora:34
 
 MAINTAINER https://github.com/dracutdevs/fedora-container
 

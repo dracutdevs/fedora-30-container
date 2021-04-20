@@ -1,4 +1,4 @@
-name: Fedora 32
+name: Fedora 34
 
 on: 
   push:
@@ -16,10 +16,10 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Build the Docker image
-      run: docker build . --file Dockerfile-32 --tag quay.io/haraldh/dracut-fedora:32
+      run: docker build . --file Dockerfile-34 --tag quay.io/haraldh/dracut-fedora:34
 
     - name: Login to quay.io
       run: docker login -u "${{ secrets.QUAY_IO_USERNAME }}" -p "${{ secrets.QUAY_IO_PASSWORD }}" quay.io
 
     - name: Push to quay.io
-      run: docker push quay.io/haraldh/dracut-fedora:32
+      run: docker push quay.io/haraldh/dracut-fedora:34
