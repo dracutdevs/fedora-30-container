@@ -42,6 +42,7 @@ RUN dnf -y install --setopt=install_weak_deps=False \
     dbus-daemon \
     kbd \
     NetworkManager \
+    python3-imgcreate \
     && dnf clean all
 
 # Set default command
