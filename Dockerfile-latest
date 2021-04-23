@@ -45,7 +45,7 @@ RUN dnf -y install --setopt=install_weak_deps=False \
     python3-imgcreate \
     && dnf clean all
 
-RUN echo 'export DRACUT_NO_XATTR=1 KVERSION="$(rpm -qa kernel --qf '%{VERSION}-%{RELEASE}.%{ARCH}\n' | sort -rn | head -1)"' > /etc/profile.d/dracut-test.sh
+RUN echo 'export DRACUT_NO_XATTR=1 KVERSION="$(rpm -qa kernel --qf "%{VERSION}-%{RELEASE}.%{ARCH}\n" | sort -rn | head -1)"' > /etc/profile.d/dracut-test.sh
 
 # Set default command
 CMD ["/usr/bin/bash"]
